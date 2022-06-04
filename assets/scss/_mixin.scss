@@ -1,0 +1,225 @@
+/*********************************/
+/*            commmon            */
+/*********************************/
+@mixin middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+//consult
+@mixin big-btn {
+  @include center;
+  top: 29.35rem;
+  z-index: 500;
+  &__memo {
+    position: relative;
+    display: inline-block;
+    background-color: #FFF;
+    border-radius: 1.2rem;
+    border: solid 0.2rem #FF4448;
+    z-index: 500;
+    width: 20rem;
+    height: 3.6rem;
+    left: 2.2rem;
+    top: 1.5rem;
+    p {
+      font-size: 1.8rem;
+      font-family: $YuGothic;
+      font-weight: bold;
+      white-space: nowrap;
+      color: #FF4448;
+      line-height: 1.34;
+      position: absolute;
+      top: 0.62rem;
+      left: 1.6rem;
+    }
+  }
+  &__memo:before,
+  &__memo:after {
+    content: "";
+    position: absolute;
+    top: 101%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  &__memo:before {
+    border-style: solid;
+    border-width: 1.1rem 0.5rem 0 0.5rem;
+    border-color: #FF4448 transparent transparent transparent;
+  }
+  &__memo:after {
+    border-style: solid;
+    border-width: 1.1rem 0.5rem 0 0.5rem;
+    border-color: #FFF transparent transparent transparent;
+    margin-top: -0.3rem;
+  }
+  /*まずは無料で相談してみる*/
+  &__btn {
+    width: 35.6rem;
+    height: 7.43rem;
+    border-radius: 4.8rem;
+    background: -moz-linear-gradient(top, #FF4448, #CE0004);  
+    background: -webkit-linear-gradient(top, #FF4448, #CE0004); 
+    background: linear-gradient(to bottom, #FF4448, #CE0004); 
+    box-shadow: -1rem -1rem 0.6rem 0 rgba(64, 64, 64, 0.16) inset;
+    position: relative;
+    z-index: 100;
+    border: 0.3rem solid #D51760;
+    p {
+      font-family: $YuGothic;
+      line-height: 1.35;
+      color: #FFF;
+      font-weight: bold;
+      font-size: 2rem;
+      position: absolute;
+      top: 50%;
+      left: 3.8rem;
+      transform: translateY(-50%);
+      i {
+        position: absolute;
+        line-height: 1.35;
+        margin-left: 7.35rem;
+      }
+    }
+  }
+}
+@mixin small-btn {
+  @include center;
+  top: 29.35rem;
+  z-index: 500;
+  &__memo {
+    position: relative;
+    display: inline-block;
+    background-color: #FFF;
+    border-radius: 1.2rem;
+    border: solid 2px #FF4448;
+    z-index: 500;
+    width: 16.44rem;
+    height: 3.287rem;
+    left: 2.01rem;
+    top: 1.5rem;
+    p {
+      font-size: 1.6rem;
+      font-family: $YuGothic;
+      font-weight: bold;
+      white-space: nowrap;
+      color: #FF4448;
+      line-height: 1.3125;
+      position: absolute;
+      top: 0.54rem;
+      left: 1.46rem;
+    }
+  }
+  &__memo:before,
+  &__memo:after {
+    content: "";
+    position: absolute;
+    top: 101%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  &__memo:before {
+    border-style: solid;
+    border-width: 1.1rem 0.5rem 0 0.5rem;
+    border-color: #FF4448 transparent transparent transparent;
+  }
+  &__memo:after {
+    border-style: solid;
+    border-width: 1.1rem 0.5rem 0 0.5rem;
+    border-color: #FFF transparent transparent transparent;
+    margin-top: -0.3rem;
+  }
+  /*まずは無料で相談してみる*/
+  &__btn {
+    width: 32.5rem;
+    height: 6.791rem;
+    border-radius: 4.8rem; //
+    background: -moz-linear-gradient(top, #FF4448, #CE0004);  
+    background: -webkit-linear-gradient(top, #FF4448, #CE0004); 
+    background: linear-gradient(to bottom, #FF4448, #CE0004); 
+    box-shadow: -1rem -1rem 0.6rem 0 rgba(64, 64, 64, 0.16) inset;
+    position: relative;
+    z-index: 100;
+    border: 0.3rem solid #D51760;
+    p {
+      font-family: $YuGothic;
+      line-height: 1.34;
+      color: #FFF;
+      font-weight: bold;
+      font-size: 1.8rem;
+      position: absolute;
+      top: 50%;
+      left: 3.47rem;
+      transform: translateY(-50%);
+      i {
+        position: absolute;
+        line-height: 1.34;
+        margin-left: 7.35rem;
+      }
+    }
+  }
+}
+@mixin small-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+/*フェードアップ*/
+@mixin fadeUp {
+  animation-name:fadeUpAnime;
+  animation-duration:0.3s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+      transform: translateY(10rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+@mixin fadeUp2 {
+  animation-name:fadeUpAnime2;
+  animation-duration:0.3s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  @keyframes fadeUpAnime2{
+    from {
+      opacity: 0;
+      transform: translate(-50%, 10rem);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0rem);
+    }
+  }
+}
+@mixin slideIn {
+  animation-name: slideIn;
+  animation-duration: 2s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+  @keyframes slideIn{
+    from {
+      opacity: 0;
+      transform: translateX(1rem);
+      transform: scale(1.1);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      transform: scale(1);
+    }
+  }
+}

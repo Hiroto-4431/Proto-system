@@ -1,0 +1,61 @@
+@import "./_mixin.scss";
+
+/*********************************************/
+/*               Google Fonts                */
+/*********************************************/
+
+/*********************************************/
+/*                    SCSS                   */
+/*********************************************/
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", "Noto Sans JP", sans-serif;
+  overflow-x: hidden;
+}
+.for {
+  &Sp {
+    display: none;
+  }
+  &Pc {
+    display: block;
+  }
+}
+
+/*********************************/
+/*            PC Base            */
+/*********************************/
+.header {
+  display: flex;
+  align-items: center;
+
+  &-logo {
+    &__image {
+    }
+  }
+
+  &-links {
+    &__link {
+    }
+  }
+}
+
+/*********************************/
+/*         PC Responsive         */
+/*********************************/
+
+@media (min-width: 769px) and (max-width: 1279px) {
+}
+
+/*********************************/
+/*               SP              */
+/*********************************/
+@media (max-width: 768px) {
+  .for {
+    &Sp {
+      display: block;
+    }
+    &Pc {
+      display: none;
+    }
+  }
+}
